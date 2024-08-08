@@ -1,12 +1,13 @@
 import { Guard, Result, ValueObject } from '../../../common'
 
-interface UserNameProps {
+export interface UserNameProps {
   name: string
 }
 
 export class UserName extends ValueObject<UserNameProps> {
   public static maxLength: number = 15
   public static minLength: number = 2
+ length: any
 
   get value(): string {
     return this.props.name
@@ -29,7 +30,7 @@ export class UserName extends ValueObject<UserNameProps> {
 
     const maxLengthResult = Guard.againstAtMost(this.maxLength, props.name)
     if (maxLengthResult.isFailure) {
-      return Result.fail<UserName>(minLengthResult.getErrorValue())
+      return Result.fail<UserName>(maxLengthResult.getErrorValue())
     }
 
     return Result.ok<UserName>(new UserName(props))
