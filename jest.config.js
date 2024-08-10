@@ -5,9 +5,9 @@ module.exports = {
     '^.+.tsx?$': ['ts-jest', {}],
   },
   moduleNameMapper: {
-    '@core/(.*)$': '<rootDir>/src/core/$1',
-    '@infrastructure/(.*)$': '<rootDir>/src/infrastructure/$1',
-    '@application/(.*)$': '<rootDir>/src/application/$1',
-    '@test/(.*)$': '<rootDir>/test/$1',
+    "@core/(.*)$": "<rootDir>/src/core/$1",
+    "@infrastructure/(.*)$": "<rootDir>/src/infrastructure/$1",
+    "@application/(.*)$": "<rootDir>/src/application/$1",
+    "@test/(.*)$": "<rootDir>/test/$1"
   },
-}
+};
