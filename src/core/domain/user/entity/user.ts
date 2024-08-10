@@ -4,7 +4,7 @@ import { UserId } from './userId'
 import { UserName } from './userName'
 import { UserPassword } from './userPassword'
 
-interface UserProps {
+export interface UserProps {
   email: UserEmail
   username: UserName
   password: UserPassword

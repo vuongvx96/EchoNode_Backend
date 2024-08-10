@@ -7,7 +7,6 @@ export interface UserNameProps {
 export class UserName extends ValueObject<UserNameProps> {
   public static maxLength: number = 15
   public static minLength: number = 2
- length: any
 
   get value(): string {
     return this.props.name

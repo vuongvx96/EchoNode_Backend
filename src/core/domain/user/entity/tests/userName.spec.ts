@@ -1,7 +1,6 @@
 import { UserName } from '../userName'
-import { Result, UniqueEntityID } from '@core/common'
+import { Result } from '@core/common'
 import { UserNameProps } from '../userName'
-import exp from 'constants'
 
 describe('UserName', () => {
   describe('create', () => {
@@ -14,6 +13,7 @@ describe('UserName', () => {
 
       expect(actual.isSuccess).toBe(true)
       expect(actual.getValue()).toBeDefined()
+      expect(actual.getValue().value).toBe(validUserNameProps.name)
     })
 
     it('should return failure userName when give null or undefined userName', () => {
@@ -27,26 +27,27 @@ describe('UserName', () => {
     })
 
     it('should return failure userName when give a userName have less than 2 character', () => {
-      const minLengthUserNameProps: UserNameProps = {
+      const lessThanMinCharacterRequiredUserNameProps: UserNameProps = {
         name: 'd',
       }
 
-      const actual: Result<UserName> = UserName.create(minLengthUserNameProps)
+      const actual: Result<UserName> = UserName.create(
+        lessThanMinCharacterRequiredUserNameProps
+      )
 
-      const error = actual.getErrorValue
       expect(actual.isFailure).toBe(true)
-      expect(error.length).toBeLessThanOrEqual(2)
+      expect(actual.getErrorValue()).toBe('Text is not at least 2 chars.')
     })
     it('should return failure userName when give a userName have more than 15 character', () => {
-      const maxLengthUserNameProps: UserNameProps = {
+      const greaterThanMaxCharacterRequiredUserNameProps: UserNameProps = {
         name: 'dangkhoanguyendsadsdadsa',
       }
 
-      const actual: Result<UserName> = UserName.create(maxLengthUserNameProps)
+      const actual: Result<UserName> = UserName.create(
+        greaterThanMaxCharacterRequiredUserNameProps
+      )
 
-      const error = actual.getErrorValue()
-      expect(error).toBe('Text is greater than 15 chars.')
-      expect(error.length).toBeGreaterThanOrEqual(15)
+      expect(actual.getErrorValue()).toBe('Text is greater than 15 chars.')
     })
   })
 })
