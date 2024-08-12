@@ -1,5 +1,5 @@
-export class UserUseCaseDto {
-  public id: string
-  public username: string
-  public email: string
+export interface UserUseCaseDto {
+  id: string
+  username: string
+  email: string
 }
