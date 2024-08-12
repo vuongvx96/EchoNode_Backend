@@ -1,10 +1,11 @@
-import { UserId } from '../userId'
 import { Result, UniqueEntityID } from '@core/common'
+
+import { UserId } from '../user-id'
 
 describe('userId', () => {
   describe('create', () => {
     it('should return success userId when give valid id', () => {
-      const uniqueEntityID: UniqueEntityID  = new UniqueEntityID(
+      const uniqueEntityID: UniqueEntityID = new UniqueEntityID(
         '327312db-58a2-4b09-ad94-3be52beb697a'
       )
 

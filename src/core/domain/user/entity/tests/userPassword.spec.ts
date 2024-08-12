@@ -1,5 +1,6 @@
 import { Result } from '@core/common'
-import { IUserPasswordProps, UserPassword } from '../userPassword'
+
+import { IUserPasswordProps, UserPassword } from '../user-password'
 
 describe('UserPassword', () => {
   describe('create', () => {

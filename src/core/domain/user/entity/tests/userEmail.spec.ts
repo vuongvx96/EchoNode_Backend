@@ -1,5 +1,6 @@
 import { Result } from '@core/common'
-import { UserEmail } from '../userEmail'
+
+import { UserEmail } from '../user-email'
 
 describe('userEmail', () => {
   describe('create', () => {

@@ -1,3 +1,3 @@
-export interface UseCase<IRequest, IResponse> {
-  execute(request?: IRequest): Promise<IResponse> | IResponse
+export interface UseCase<TUseCasePort, TUseCaseResult> {
+  execute(port: TUseCasePort): Promise<TUseCaseResult>
 }

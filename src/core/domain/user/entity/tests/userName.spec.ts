@@ -1,6 +1,7 @@
-import { UserName } from '../userName'
 import { Result } from '@core/common'
-import { UserNameProps } from '../userName'
+
+import { UserName } from '../user-name'
+import { UserNameProps } from '../user-name'
 
 describe('UserName', () => {
   describe('create', () => {

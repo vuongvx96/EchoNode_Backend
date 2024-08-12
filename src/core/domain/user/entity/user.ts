@@ -1,8 +1,8 @@
 import { AggregateRoot, Guard, Result, UniqueEntityID } from '../../../common'
-import { UserEmail } from './userEmail'
-import { UserId } from './userId'
-import { UserName } from './userName'
-import { UserPassword } from './userPassword'
+import { UserEmail } from './user-email'
+import { UserId } from './user-id'
+import { UserName } from './user-name'
+import { UserPassword } from './user-password'
 
 export interface UserProps {
   email: UserEmail

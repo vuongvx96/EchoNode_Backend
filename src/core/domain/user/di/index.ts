@@ -1,1 +1,1 @@
-export * from './userDITokens'
+export * from './user.di-tokens'
