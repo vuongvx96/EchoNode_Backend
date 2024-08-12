@@ -11,5 +11,6 @@ export class CreateUserService implements CreateUserUseCase {
 
   async execute(port: CreateUserPort): Promise<Result<UserUseCaseDto>> {
     throw new Error('Method not implemented.')
+    
   }
 }
